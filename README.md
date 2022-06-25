@@ -18,4 +18,4 @@ WebOS TTS 예제
 우리는 com.webos.service.tts를 사용할 것이기 때문에 requiredPermissions에 tts.operation을 추가해줘야합니다. (혹은 all을 통해서 모든 권한을 활성화할 수 있는 것으로 보여집니다.)
 
 ----index.html----
-speak()라는 사용자 지정함수를 만들어줘서 tts 
+speak()라는 사용자 지정함수를 만들어줘서 tt
