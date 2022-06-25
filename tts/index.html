@@ -1,0 +1,46 @@
+<!--
+Copyright (c) 2020 LG Electronics Inc.
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Web App</title>
+<style type="text/css">
+    body {
+        background-color:#202020;
+    }
+    h1 {
+        padding:20px;
+        color:#FFFFFF;
+    }
+    .button-section {
+        padding-left: 20px;
+    }
+</style>
+<script type="text/javascript">
+    let bridge = new WebOSServiceBridge();
+    function speak() {
+        let url = "luna://com.webos.service.tts/speak";
+        let params = {
+            "text":"안녕하세요. COSMOS 입니다.",
+            "language":"ko-KR",
+            "clear":true
+        };
+
+        bridge.onservicecallback = ()=>{console.log(res);};
+        bridge.call(url, JSON.stringify(params));
+    }
+</script>
+</head>
+<body>
+    <div>
+        <h1 id="txt_msg">Hello, Web Application!!</h1>
+        <div class="button-section">
+            <button onclick="speak()">Speak Hello</button>
+        </div>
+    </div>
+</body>
+</html>
